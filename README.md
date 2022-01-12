@@ -1,1 +1,1 @@
-# battleship-app
+# ships-app
