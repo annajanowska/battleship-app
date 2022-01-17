@@ -35,6 +35,7 @@ public class Game {
         this.rightPlayer = rightPlayer;
         this.leftPlayerID = leftPlayer.getIdUser();
         this.rightPlayerID = rightPlayer.getIdUser();
+        this.isGameOver = false;
     }
 
     public Game(Player leftPlayer, AIPlayer rightPlayer) {
@@ -42,6 +43,7 @@ public class Game {
         this.bot = rightPlayer;
         this.leftPlayerID = leftPlayer.getIdUser();
         this.rightPlayerID = rightPlayer.getIdUser();
+        this.isGameOver = false;
     }
 
     public Game(AIPlayer leftPlayer, AIPlayer rightPlayer) {
@@ -49,6 +51,7 @@ public class Game {
         this.bot2 = rightPlayer;
         this.leftPlayerID = leftPlayer.getIdUser();
         this.rightPlayerID = rightPlayer.getIdUser();
+        this.isGameOver = false;
     }
 
     public Game(int idGame, String leftPlayer, String rightPlayer, String gameTime) {
@@ -56,6 +59,7 @@ public class Game {
         this.time = gameTime;
         this.leftPlayerNick = leftPlayer;
         this.rightPlayerNick = rightPlayer;
+        this.isGameOver = false;
     }
 
     public void startGame() {
@@ -123,6 +127,14 @@ public class Game {
         this.loserAI = loser;
         this.loserNick = loser.getNick();
         this.loserID = loser.getIdUser();
+    }
+
+    public boolean isGameOver() {
+        return isGameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        isGameOver = gameOver;
     }
 
     public Player getLeftPlayer() {

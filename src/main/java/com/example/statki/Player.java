@@ -131,11 +131,12 @@ public class Player {
     }
 
     public void setAccuracy() {
-        if (numberOfGames != 0) {
-            accuracy = (int) Math.round(100 * wonGames/numberOfGames);
+        if (numberOfAllShots != 0) {
+            accuracy = (int) Math.round(100 * numberOfHitShots/numberOfAllShots);
         } else {
             accuracy = 0;
         }
+        System.out.println(accuracy);
     }
 
     public void incrementNumberOfAllShots() {

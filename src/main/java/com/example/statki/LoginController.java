@@ -59,7 +59,6 @@ public class LoginController {
     }
 
     public void loginClicked(ActionEvent actionEvent) throws NoSuchAlgorithmException {
-        InfoMessageLabel.setText("You try to login");
         if (nickTextField.getText().isBlank() == false && passwordTextField.getText().isBlank() == false) {
             validateLogin(actionEvent);
             nickTextField.clear();
@@ -95,7 +94,7 @@ public class LoginController {
                     changeOfWindow(actionEvent);
                 }
                 else {
-                    InfoMessageLabel.setText("Użytkownik nie istnieje");
+                    InfoMessageLabel.setText("Niepoprawne dane");
                 }
             }
 

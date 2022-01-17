@@ -85,7 +85,7 @@ public class RegisterController {
         System.out.println(password);
 
         if (!pattern.matcher(emailTextField.getText()).matches()) {
-            registrationMessageLabel.setText("Invalid email");
+            registrationMessageLabel.setText("Niepoprawny e-mail");
         }
         else if (isNickTaken(nick,email,password) == true)
         {

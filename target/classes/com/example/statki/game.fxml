@@ -123,8 +123,8 @@
             <Label text="J" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
-      <Label fx:id="player1Label" layoutX="219.0" layoutY="385.0" text="player1" />
-      <Label fx:id="player2Label" layoutX="582.0" layoutY="385.0" text="player2" />
+      <Label fx:id="player1Label" layoutX="219.0" layoutY="385.0" maxHeight="17.0" maxWidth="39.0" text="player1" wrapText="true" />
+      <Label fx:id="player2Label" layoutX="582.0" layoutY="385.0" maxHeight="17.0" maxWidth="39.0" text="player2" wrapText="true" />
       <HBox alignment="CENTER" layoutX="300.0" layoutY="421.0" prefHeight="54.0" prefWidth="200.0" spacing="10.0">
          <children>
             <Button fx:id="bufferButton" mnemonicParsing="false" onAction="#bufferClicked" style="-fx-background-color: #2600bd;" text="bufor" textFill="WHITE" />

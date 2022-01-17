@@ -89,8 +89,9 @@ public class GamePlayerAIController {
                         if (player.isMyTurn()) {
                             drawMap(finalI, finalJ, cell2, player, bot, listOfShotsLeft, shipsCellsPairsRight, battlefieldRightGrid, shipsCellsRight);
                             if (bot.getBattlefield().checkIfShipsAlive()) {
+                                game.setGameOver(true);
                                 player.incrementNumberOfGames();
-                                player.incrementLostGames();
+                                player.incrementWonGames();
                                 player.setAccuracy();
                                 game.setWinner(player);
                                 game.setLoser(bot);
@@ -126,7 +127,9 @@ public class GamePlayerAIController {
     }
 
     public void unsetGame(Stage stage) {
-        game.deleteGame();
+        if (!game.isGameOver()) {
+            game.deleteGame();
+        }
     }
 
     public void setPlayerAndBot(Player player, AIPlayer bot, BorderPane ap) {
@@ -929,8 +932,9 @@ public class GamePlayerAIController {
             }
             player.getBattlefield().getMap().get(indexOfRowLeft-1).get(indexOfColumnLeft-1).setWasHit(true);
             if (player.getBattlefield().checkIfShipsAlive()) {
+                game.setGameOver(true);
                 player.incrementNumberOfGames();
-                player.incrementWonGames();
+                player.incrementLostGames();
                 player.setAccuracy();
                 game.setWinner(bot);
                 game.setLoser(player);

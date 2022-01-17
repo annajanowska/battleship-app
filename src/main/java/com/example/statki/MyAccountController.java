@@ -36,17 +36,7 @@ public class MyAccountController {
     public Button leftButton;
 
     public void rightClicked(ActionEvent actionEvent) throws IOException {
-        if (player != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("myAccount.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            MyAccountController myAccountController = loader.getController();
-            myAccountController.setPlayer(player);
-            Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        }
-        else {
+        if (player == null) {
             Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);

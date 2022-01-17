@@ -21,6 +21,12 @@ public class StartController {
     public Label titleLabel;
     public Player player;
 
+    public void initialize() {
+        if (player == null) {
+            playButton.setDisable(true);
+        }
+    }
+
     public void rightClicked(ActionEvent actionEvent) throws IOException{
         if (player != null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("myAccount.fxml"));
@@ -50,6 +56,7 @@ public class StartController {
             stage.setScene(scene);
             stage.show();
         } else {
+            playButton.setDisable(true);
             player = null;
             leftButton.setText("Zaloguj się");
             rightButton.setText("Rejestracja");
@@ -83,6 +90,7 @@ public class StartController {
         this.player = player;
         System.out.println(this.player);
         if (this.player != null) {
+            playButton.setDisable(false);
             leftButton.setText("Wyloguj się");
             rightButton.setText("Moje konto");
         }

@@ -94,7 +94,7 @@ public class LogOtherPlayerController {
     public void validateLogin(ActionEvent actionEvent) throws NoSuchAlgorithmException {
         DatabaseConnector connectNow = new DatabaseConnector();
         Connection connectDB = connectNow.getConnection();
-        this.InfoMessageLabel.setText("Użytkownik nie istnieje");
+        this.InfoMessageLabel.setText("Niepoprawne dane");
         String firstPlayerNick = this.player.nick;
         String nick = nickTextField.getText();
         String password = hashPassword(passwordTextField.getText());
@@ -121,7 +121,7 @@ public class LogOtherPlayerController {
                 }
                 else
                 {
-                    this.InfoMessageLabel.setText("Użytkownik nie istnieje");
+                    this.InfoMessageLabel.setText("Niepoprawne dane");
                 }
             }
         } catch (Exception var9) {

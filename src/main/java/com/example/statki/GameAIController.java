@@ -188,7 +188,9 @@ public class GameAIController {
     }
 
     public void unsetGame(Stage stage) {
-        game.deleteGame();
+        if (!game.isGameOver()) {
+            game.deleteGame();
+        }
     }
 
     public void setBots(AIPlayer playerBot1, AIPlayer playerBot2, Player player, BorderPane ap) {
@@ -287,6 +289,7 @@ public class GameAIController {
             }
             leftPlayer.getBattlefield().getMap().get(indexOfRowLeft-1).get(indexOfColumnLeft-1).setWasHit(true);
             if (leftPlayer.getBattlefield().checkIfShipsAlive()) {
+                game.setGameOver(true);
                 System.out.println("bot2 wygral!");
                 game.setWinner(rightPlayer);
                 game.setLoser(leftPlayer);
@@ -385,6 +388,7 @@ public class GameAIController {
             }
             rightPlayer.getBattlefield().getMap().get(indexOfRowRight-1).get(indexOfColumnRight-1).setWasHit(true);
             if (rightPlayer.getBattlefield().checkIfShipsAlive()) {
+                game.setGameOver(true);
                 System.out.println("bot1 wygral!");
                 game.setWinner(leftPlayer);
                 game.setLoser(rightPlayer);

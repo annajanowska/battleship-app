@@ -199,6 +199,7 @@ public class GameController {
     }
 
     public void ifPlayerWon(Player winner, Player loser, MouseEvent mouseEvent) throws IOException {
+        game.setGameOver(true);
         leftPlayer.incrementNumberOfGames();
         rightPlayer.incrementNumberOfGames();
         winner.incrementWonGames();
@@ -725,7 +726,9 @@ public class GameController {
     }
 
     public void unsetGame(Stage stage) {
-        game.deleteGame();
+        if (!game.isGameOver()) {
+            game.deleteGame();
+        }
     }
 
     public void setGame(Player player, Player secondPlayer, BorderPane ap) {

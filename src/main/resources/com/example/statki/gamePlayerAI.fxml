@@ -14,7 +14,7 @@
     <children>
         <Pane prefHeight="54.0" prefWidth="800.0" style="-fx-background-color: BLACK;">
             <children>
-                <Label fx:id="titleLabel" layoutX="24.0" layoutY="17.0" text="MORSKA GRA" textFill="WHITE" onMouseClicked="#cancelLabelOnAction">
+                <Label fx:id="titleLabel" layoutX="24.0" layoutY="17.0" onMouseClicked="#cancelLabelOnAction" text="MORSKA GRA" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -123,7 +123,7 @@
                 <Label text="J" GridPane.columnIndex="10" GridPane.halignment="CENTER" />
             </children>
         </GridPane>
-        <Label fx:id="player1Label" layoutX="219.0" layoutY="385.0" text="player" />
+        <Label fx:id="player1Label" layoutX="219.0" layoutY="385.0" maxHeight="17.0" maxWidth="39.0" text="player" />
         <Label fx:id="player2Label" layoutX="582.0" layoutY="385.0" text="bot" />
         <HBox alignment="CENTER" layoutX="300.0" layoutY="421.0" prefHeight="54.0" prefWidth="200.0" spacing="10.0">
             <children>
