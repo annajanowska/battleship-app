@@ -42,23 +42,13 @@ public class GamePlayerAIController {
     public List<Pair<Integer, Integer>> listOfShotsRight = new ArrayList<>();
     public int indexOfColumnLeft;
     public int indexOfRowLeft;
-    public int indexOfColumnRight;
-    public int indexOfRowRight;
-    public boolean firstTimeLeftPlayer = true;
     public boolean firstTimeRightPlayer = true;
-    public boolean ifCheckLeft = true;
-    public List<Pair<Integer, Integer>> listOfShipLeft = new ArrayList<>();
     public boolean ifCheckRight = true;
     public List<Pair<Integer, Integer>> listOfShipRight = new ArrayList<>();
     public Date startGameTime = new Date ();
 
 
     public void initialize() {
-
-//        shipsCellsPairsLeft = null;
-//        shipsCellsPairsRight = null;
-//        shipsCellsLeft = null;
-//        shipsCellsRight = null;
 
         nextButton.setDisable(true);
 
@@ -133,10 +123,8 @@ public class GamePlayerAIController {
     }
 
     public void setPlayerAndBot(Player player, AIPlayer bot, BorderPane ap) {
-
         Stage stage = (Stage) ap.getScene().getWindow();
         stage.setOnCloseRequest(event -> unsetGame(stage));
-
         this.player = player;
         this.bot = bot;
         this.game = new Game(player, bot);
@@ -148,7 +136,6 @@ public class GamePlayerAIController {
         colorShips(shipsCellsLeft, battlefieldLeftGrid);
         makeListOfShipsPoints(bot, shipsCellsRight);
         makeListOfShipsPairs(bot, shipsCellsPairsRight);
-        //colorShips(shipsCellsRight, battlefieldRightGrid);
     }
 
     public void drawMap(int finalI, int finalJ, Pane cell2, Player player, AIPlayer enemy, List<Pair<Integer,Integer>> listOfShots, List<Pair<Integer,Integer>> shipsCellsPairs, GridPane battlefieldGrid, List<ArrayList> shipsCells) {
@@ -167,13 +154,11 @@ public class GamePlayerAIController {
             boolean check = checkIfEntire(finalI, finalJ, shipsCells, shipsCellsPairs, listOfShots);
             System.out.println(check);
             enemy.getBattlefield().getMap().get(tempRow-1).get(tempColumn-1).setWasHit(true);
-            Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-            System.out.println("Name file source: " + Screenshot.getFileSource());
             if(check){
                 sinkThatBastard(finalI,finalJ, bot,shipsCells, battlefieldGrid, shipsCellsPairs);
-                game.setMove(tempRow, tempColumn, player.getIdUser(), true, true, Screenshot.getFileSource());
+                game.setMove(tempRow, tempColumn, player.getIdUser(), true, true);
             } else {
-                game.setMove(tempRow, tempColumn, player.getIdUser(), true, false, Screenshot.getFileSource());
+                game.setMove(tempRow, tempColumn, player.getIdUser(), true, false);
             }
             player.incrementNumberOfAllShots();
             player.incrementNumberOfHitShots();
@@ -189,9 +174,7 @@ public class GamePlayerAIController {
             player.setMyTurn(false);
             enemy.setMyTurn(true);
             nextButton.setDisable(false);
-            Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-            System.out.println("Name file source: " + Screenshot.getFileSource());
-            game.setMove(tempRow, tempColumn, player.getIdUser(), false,false, Screenshot.getFileSource());
+            game.setMove(tempRow, tempColumn, player.getIdUser(), false,false);
         }
     }
 
@@ -869,14 +852,12 @@ public class GamePlayerAIController {
                     GridPane.setConstraints(cell, indexOfColumnLeft, indexOfRowLeft);
                     battlefieldLeftGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowLeft, indexOfColumnLeft, shipsCellsLeft, shipsCellsPairsLeft, listOfShotsRight);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckRight = true;
                         sinkThatBastard(indexOfRowLeft, indexOfColumnLeft, bot, shipsCellsLeft, battlefieldLeftGrid, shipsCellsPairsLeft);
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), true, false);
                     }
                 } else {
                     GameController.playMusicSplash();
@@ -886,9 +867,7 @@ public class GamePlayerAIController {
                     bot.setMyTurn(false);
                     player.setMyTurn(true);
                     nextButton.setDisable(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), false,false);
                 }
                 firstTimeRightPlayer = false;
             } else {
@@ -908,14 +887,12 @@ public class GamePlayerAIController {
                     GridPane.setConstraints(cell, indexOfColumnLeft, indexOfRowLeft);
                     battlefieldLeftGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowLeft, indexOfColumnLeft, shipsCellsLeft, shipsCellsPairsLeft, listOfShotsRight);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckRight = true;
                         sinkThatBastard(indexOfRowLeft, indexOfColumnLeft, player, shipsCellsLeft, battlefieldLeftGrid, shipsCellsPairsLeft);
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), true, false);
                     }
                 } else {
                     GameController.playMusicSplash();
@@ -925,9 +902,7 @@ public class GamePlayerAIController {
                     bot.setMyTurn(false);
                     player.setMyTurn(true);
                     nextButton.setDisable(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowLeft, indexOfColumnLeft, bot.getIdUser(), false,false);
                 }
             }
             player.getBattlefield().getMap().get(indexOfRowLeft-1).get(indexOfColumnLeft-1).setWasHit(true);

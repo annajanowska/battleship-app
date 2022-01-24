@@ -189,10 +189,10 @@ public class GamesReplayController {
     }
 
     public void clickedFirstGame(ActionEvent actionEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("replayGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("replay.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        CheckReplayGameController replayGame = loader.getController();
+        ReplayController replayGame = loader.getController();
         replayGame.setPlayer(player);
         replayGame.setIdGame(getResultGames()[0].idGame);
         System.out.println("1"+ getResultGames()[0].idGame);
@@ -202,10 +202,10 @@ public class GamesReplayController {
     }
 
     public void clickedSecondGame(ActionEvent actionEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("replayGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("replay.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        CheckReplayGameController replayGame = loader.getController();
+        ReplayController replayGame = loader.getController();
         replayGame.setPlayer(player);
         replayGame.setIdGame(getResultGames()[1].idGame);
         System.out.println("2"+ getResultGames()[1].idGame);
@@ -215,10 +215,10 @@ public class GamesReplayController {
     }
 
     public void clickedThirdGame(ActionEvent actionEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("replayGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("replay.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        CheckReplayGameController replayGame = loader.getController();
+        ReplayController replayGame = loader.getController();
         replayGame.setPlayer(player);
         replayGame.setIdGame(getResultGames()[2].idGame);
         Stage window =  (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -227,10 +227,10 @@ public class GamesReplayController {
     }
 
     public void clickedFourthGame(ActionEvent actionEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("replayGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("replay.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        CheckReplayGameController replayGame = loader.getController();
+        ReplayController replayGame = loader.getController();
         replayGame.setPlayer(player);
         replayGame.setIdGame(getResultGames()[3].idGame);
         Stage window =  (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -239,10 +239,10 @@ public class GamesReplayController {
     }
 
     public void clickedFifthGame(ActionEvent actionEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("replayGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("replay.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        CheckReplayGameController replayGame = loader.getController();
+        ReplayController replayGame = loader.getController();
         replayGame.setPlayer(player);
         replayGame.setIdGame(getResultGames()[4].idGame);
         Stage window =  (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();

@@ -228,14 +228,12 @@ public class GameAIController {
                     GridPane.setConstraints(cell, indexOfColumnLeft, indexOfRowLeft);
                     battlefieldLeftGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowLeft, indexOfColumnLeft, shipsCellsLeft, shipsCellsPairsLeft, listOfShotsRight);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckRight = true;
                         sinkThatBastard(indexOfRowLeft, indexOfColumnLeft, rightPlayer, shipsCellsLeft, battlefieldLeftGrid, shipsCellsPairsLeft);
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), true, false);
                     }
                 } else {
                     GameController.playMusicSplash();
@@ -244,9 +242,7 @@ public class GameAIController {
                     battlefieldLeftGrid.getChildren().add(cell);
                     rightPlayer.setMyTurn(false);
                     leftPlayer.setMyTurn(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), false,false);
                 }
                 firstTimeRightPlayer = false;
             } else {
@@ -266,14 +262,12 @@ public class GameAIController {
                     GridPane.setConstraints(cell, indexOfColumnLeft, indexOfRowLeft);
                     battlefieldLeftGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowLeft, indexOfColumnLeft, shipsCellsLeft, shipsCellsPairsLeft, listOfShotsRight);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckRight = true;
                         sinkThatBastard(indexOfRowLeft, indexOfColumnLeft, leftPlayer, shipsCellsLeft, battlefieldLeftGrid, shipsCellsPairsLeft);
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), true, false);
                     }
                 } else {
                     GameController.playMusicSplash();
@@ -282,9 +276,7 @@ public class GameAIController {
                     battlefieldLeftGrid.getChildren().add(cell);
                     rightPlayer.setMyTurn(false);
                     leftPlayer.setMyTurn(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowLeft, indexOfColumnLeft, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowLeft, indexOfColumnLeft, rightPlayer.getIdUser(), false,false);
                 }
             }
             leftPlayer.getBattlefield().getMap().get(indexOfRowLeft-1).get(indexOfColumnLeft-1).setWasHit(true);
@@ -326,14 +318,12 @@ public class GameAIController {
                     GridPane.setConstraints(cell, indexOfColumnRight, indexOfRowRight);
                     battlefieldRightGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowRight, indexOfColumnRight, shipsCellsRight, shipsCellsPairsRight, listOfShotsLeft);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckLeft = true;
                         sinkThatBastard(indexOfRowRight, indexOfColumnRight, leftPlayer, shipsCellsRight, battlefieldRightGrid, shipsCellsPairsRight);
-                        game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), true, false);
                     }
                 } else {
                     GameController.playMusicSplash();
@@ -342,9 +332,7 @@ public class GameAIController {
                     battlefieldRightGrid.getChildren().add(cell);
                     leftPlayer.setMyTurn(false);
                     rightPlayer.setMyTurn(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), false,false);
                 }
                 firstTimeLeftPlayer = false;
             } else {
@@ -364,14 +352,12 @@ public class GameAIController {
                     GridPane.setConstraints(cell, indexOfColumnRight, indexOfRowRight);
                     battlefieldRightGrid.getChildren().add(cell);
                     boolean check = checkIfEntire(indexOfRowRight, indexOfColumnRight, shipsCellsRight, shipsCellsPairsRight, listOfShotsLeft);
-                    Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
                     if (check) {
                         ifCheckLeft = true;
                         sinkThatBastard(indexOfRowRight, indexOfColumnRight, rightPlayer, shipsCellsRight, battlefieldRightGrid, shipsCellsPairsRight);
-                        game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), true, true, Screenshot.getFileSource());
+                        game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), true, true);
                     } else {
-                        game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), true, false, Screenshot.getFileSource());
+                        game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), true, false);
                     }
 
                 } else {
@@ -381,9 +367,7 @@ public class GameAIController {
                     battlefieldRightGrid.getChildren().add(cell);
                     leftPlayer.setMyTurn(false);
                     rightPlayer.setMyTurn(true);
-                    Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-                    System.out.println("Name file source: " + Screenshot.getFileSource());
-                    game.setMove(indexOfRowRight, indexOfColumnRight, player.getIdUser(), false,false, Screenshot.getFileSource());
+                    game.setMove(indexOfRowRight, indexOfColumnRight, leftPlayer.getIdUser(), false,false);
                 }
             }
             rightPlayer.getBattlefield().getMap().get(indexOfRowRight-1).get(indexOfColumnRight-1).setWasHit(true);

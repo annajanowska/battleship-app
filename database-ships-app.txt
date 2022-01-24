@@ -34,8 +34,6 @@ CREATE TABLE Moves (
     idWhoMoved int NOT NULL,
     hit bool NOT NULL,
     shipDestroyed bool NOT NULL,
-    imageName TEXT NOT NULL,
-    imageSource LONGBLOB NOT NULL,
     PRIMARY KEY (idMove)
 );
 ALTER TABLE Statistics ADD CONSTRAINT Statistics_fk0 FOREIGN KEY (idUser) REFERENCES Users(idUser);

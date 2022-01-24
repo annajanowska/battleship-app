@@ -51,14 +51,6 @@ public class GameController {
 
     public void initialize() {
 
-        //battlefieldLeftGrid.setDisable(true);
-        //battlefieldLeftGridSecond.setDisable(true);
-
-//        shipsCellsPairsLeft = null;
-//        shipsCellsPairsRight = null;
-//        shipsCellsLeft = null;
-//        shipsCellsRight = null;
-
         battlefieldLeftGridSecond.setVisible(false);
         battlefieldRightGridSecond.setDisable(true);
         battlefieldRightGridSecond.setVisible(false);
@@ -164,13 +156,11 @@ public class GameController {
             boolean check = checkIfEntire(finalI, finalJ, shipsCells, enemy, shipsCellsPairs, listOfShots);
             System.out.println(check);
             enemy.getBattlefield().getMap().get(tempRow-1).get(tempColumn-1).setWasHit(true);
-            Screenshot.takeScreenShot(); // TO IMPROVE (1 STEP TO SOON)
-            System.out.println("Name file source: " + Screenshot.getFileSource());
             if(check){
                 sinkThatBastard(finalI,finalJ, shipsCells, battlefieldGrid, otherBattlefieldGrid, shipsCellsPairs);
-                game.setMove(tempRow, tempColumn, player.getIdUser(), true, true, Screenshot.getFileSource());
+                game.setMove(tempRow, tempColumn, player.getIdUser(), true, true);
             } else {
-                game.setMove(tempRow, tempColumn, player.getIdUser(), true, false, Screenshot.getFileSource());
+                game.setMove(tempRow, tempColumn, player.getIdUser(), true, false);
             }
             player.incrementNumberOfAllShots();
             player.incrementNumberOfHitShots();
@@ -192,9 +182,7 @@ public class GameController {
             player.setMyTurn(false);
             enemy.setMyTurn(true);
             bufferButton.setDisable(false);
-            Screenshot.takeScreenShot(); //TO IMPROVE (1 STEP TO SOON)
-            System.out.println("Name file source: " + Screenshot.getFileSource());
-            game.setMove(tempRow, tempColumn, player.getIdUser(), false,false, Screenshot.getFileSource());
+            game.setMove(tempRow, tempColumn, player.getIdUser(), false,false);
         }
     }
 

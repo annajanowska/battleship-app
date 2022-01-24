@@ -182,33 +182,19 @@ public class Game {
     }
 
 
-    public void setMove(int xRow, int yColumn, int idUser, boolean hit, boolean shipDestroyed, String sourceScreenshot) {
-
+    public void setMove(int xRow, int yColumn, int idUser, boolean hit, boolean shipDestroyed) {
         DatabaseConnector connectNow = new DatabaseConnector();
-
-        String insertFields = "INSERT INTO moves(idGame, xRow, yColumn, idWhoMoved, hit, shipDestroyed, imageName, imageSource) VALUES ('" +
+        String insertFields = "INSERT INTO moves(idGame, xRow, yColumn, idWhoMoved, hit, shipDestroyed) VALUES ('" +
                 idGame + "','" +
                 xRow + "','" +
                 yColumn + "','" +
                 idUser + "','" +
                 changeBoolToInt(hit) + "','" +
-                changeBoolToInt(shipDestroyed) + "','" +
-                sourceScreenshot + "', ? )";
+                changeBoolToInt(shipDestroyed) + "')";
 
-
-        try (Connection conn = connectNow.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(insertFields)) {
-
-            File file = new File(sourceScreenshot);
-            FileInputStream input = new FileInputStream(file);
-
-            pstmt.setBinaryStream(1, input,(int)file.length());
-
-            System.out.println("Reading file " + file.getAbsolutePath());
-            System.out.println("Store file in the database.");
+        try (Connection conn = connectNow.getConnection(); PreparedStatement pstmt = conn.prepareStatement(insertFields)) {
             pstmt.executeUpdate();
-
-        } catch (SQLException | FileNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
