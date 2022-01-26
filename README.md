@@ -6,11 +6,11 @@
 - otwórz HeidiSQL
 - kliknij w przycisk 'Nowy'
 - nadaj nazwę i resztę ustawień jak na zdjęciu:
-  ![App Screenshot](D:\Downloads\ships1.jpg)
+  ![App Screenshot](screenshots\screenshot1.jpg)
 - kliknij w przycisk 'Otwórz'
 - wybierz bazę 'ships-game' jak na zdjęciu:
 
-  ![App Screenshot](D:\Downloads\ships.jpg)
+  ![App Screenshot](screenshots\screenshot2.jpg)
 - kliknij w zakładkę 'Kwerenda'
 - wybierz opcję 'Nowa zakładka zapytań'
 - otwórz plik 'database-ships-app.txt', który znajduje się w folderze projektu
