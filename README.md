@@ -1,5 +1,5 @@
-# Battle ship game
-The project implements the traditional rules of the ship game. You can create your account and choose the game mode - real player or AI bot with different difficulty levels. Additionally, you can view stats and game replays.
+# Battleship game
+The project implements the traditional rules of the battleship game. You can create your account and choose the game mode - real player or AI bot with different difficulty levels. Additionally, you can view stats and game replays.
 
 <img src="https://user-images.githubusercontent.com/56201394/217060807-95e196af-410a-435e-a0ac-c08d53f3e4cc.png" width="30" height="30">
 
