@@ -1,5 +1,5 @@
 # Battleship game <img src="https://user-images.githubusercontent.com/56201394/217060807-95e196af-410a-435e-a0ac-c08d53f3e4cc.png" width="30" height="30">
-The project implements the traditional rules of the battleship game. You can create your account and choose the game mode - real player or AI bot with different difficulty levels. Additionally, you can view stats and game replays.
+The project implements the traditional rules of the battleship game. You can create your account and choose the game mode - real player or AI bot with different difficulty levels. Additionally, you can view statistics and game replays.
 
 ![image](https://user-images.githubusercontent.com/56201394/217059350-db311e6c-0873-4996-8eb4-7c23d11fce8c.png)
 ![image](https://user-images.githubusercontent.com/56201394/217059415-3ded2ddc-6b63-4ace-9907-02894518a5ed.png)
@@ -13,22 +13,23 @@ The project implements the traditional rules of the battleship game. You can cre
 
 
 
-## How to launch game
-- open the project in IntelliJ
-- open XAMPP
-- press START next to the MySQL module
-- open HeidiSQL
-- click on the 'New' button
-- give the name and the rest of the settings as in the picture:
+## How to run game
+- open the project in **IntelliJ IDEA**
+- open **XAMPP**
+- press *Start* next to the **MySQL** module
+- open **HeidiSQL**
+- click on the *New* button
+- fill in the fields as in the picture
+
    ![](./screenshots/screenshot1.jpg)
-- click on the 'Open' button
-- select the 'ships-game' base as in the picture:
+- click on the *Open* button
+- select the *'ships-game'* base as in the picture:
 
    ![](./screenshots/screenshot2.jpg)
-- click on the 'Query' tab
-- select 'New query tab'
-- open the file 'database-ships-app.txt' which is in the project folder
-- copy the content of the file and paste it into the previously created new query tab in HeidiSQL
+- click on the *Query* tab
+- select *New query tab*
+- open the file *'database-ships-app.txt'* which is in the project folder
+- copy the content of the file and paste it into the previously created new query tab in **HeidiSQL**
 - press F9
-- open class *'StartApplication'* in IntelliJ (src\main\java\com\example\ships\StartApplication.java)
-- right click and select 'Run 'StartApplication.main()''
+- open class *'StartApplication'* in **IntelliJ IDEA** ``` (src\main\java\com\example\ships\StartApplication.java) ```
+- right click and select *'Run 'StartApplication.main()''*
