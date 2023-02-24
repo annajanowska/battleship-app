@@ -1,4 +1,4 @@
-# Battleship game <img src="https://user-images.githubusercontent.com/56201394/217060807-95e196af-410a-435e-a0ac-c08d53f3e4cc.png" width="30" height="30">
+# Battleship <img src="https://user-images.githubusercontent.com/56201394/217060807-95e196af-410a-435e-a0ac-c08d53f3e4cc.png" width="30" height="30">
 The project implements the traditional rules of the battleship game. You can create your account and choose the game mode - real player or AI bot with different difficulty levels. Additionally, you can view statistics and game replays.
 
 ![image](https://user-images.githubusercontent.com/56201394/217059350-db311e6c-0873-4996-8eb4-7c23d11fce8c.png)
